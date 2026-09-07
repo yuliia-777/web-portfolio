@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yuliia Aleksiienko — Shopify Developer | Store audits &amp; fixes</title>
-<meta name="description" content="Shopify developer, 6 years. I find where your store leaks revenue - broken mobile flows, page speed, app bloat, accessibility risk - then I fix it. Store audits from $300.">
+<meta name="description" content="Shopify developer, 6 years. I find where your store leaks revenue - broken mobile flows, page speed, app bloat, accessibility risk - then I fix it. Store audits from $450.">
 <meta name="author" content="Yuliia Aleksiienko">
 <meta name="theme-color" content="#173286">
 <link rel="canonical" href="https://yuliia-777.github.io/web-portfolio/">
@@ -12,13 +12,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yuliia-777.github.io/web-portfolio/">
 <meta property="og:title" content="Your store has traffic. I find where it leaks.">
-<meta property="og:description" content="Shopify developer, 6 years. Broken mobile flows, page speed, app bloat, accessibility risk - I find what is costing you money and fix it. Store audits from $300.">
+<meta property="og:description" content="Shopify developer, 6 years. Broken mobile flows, page speed, app bloat, accessibility risk - I find what is costing you money and fix it. Store audits from $450.">
 <meta property="og:image" content="https://yuliia-777.github.io/web-portfolio/og-image.jpg">
 <meta property="og:image:alt" content="Yuliia Aleksiienko, Shopify developer">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Your store has traffic. I find where it leaks.">
-<meta name="twitter:description" content="Shopify developer, 6 years. Store audits from $300.">
+<meta name="twitter:description" content="Shopify developer, 6 years. Store audits from $450.">
 <meta name="twitter:image" content="https://yuliia-777.github.io/web-portfolio/og-image.jpg">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELQCM50WZG"></script>
@@ -139,7 +139,28 @@
     font-weight: 300;
     transition: border-color 0.2s, background 0.2s;
   }
-  .audit-form select { cursor: pointer; }
+  .audit-form select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 3rem;
+  }
+  /* Своя стрелка - отступ от края управляется вручную */
+  .audit-form .select-wrap { position: relative; display: block; }
+  .audit-form .select-wrap::after {
+    content: '';
+    position: absolute;
+    right: 1.15rem;
+    top: 50%;
+    width: 9px; height: 9px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-70%) rotate(45deg);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .audit-form select::-ms-expand { display: none; }
   .audit-form option { background: var(--card); color: var(--text); }
   .audit-form input::placeholder,
   .audit-form textarea::placeholder { color: #667090; }
@@ -756,7 +777,7 @@
     <div class="audit-card featured">
       <span class="audit-tag">Most popular</span>
       <h3>Store Audit</h3>
-      <div class="audit-price">from $300</div>
+      <div class="audit-price">from $450</div>
       <div class="audit-meta">Delivered in 3 business days · PDF report + walkthrough notes</div>
       <ul class="audit-list">
         <li>Mobile and tablet check — the breakages you never see from your desktop</li>
@@ -770,7 +791,7 @@
 
     <div class="audit-card">
       <h3>Audit + Accessibility</h3>
-      <div class="audit-price">from $600</div>
+      <div class="audit-price">from $800</div>
       <div class="audit-meta">Delivered in 5 business days · For stores selling into the US or EU</div>
       <ul class="audit-list">
         <li>Everything in the Store Audit</li>
@@ -1281,12 +1302,14 @@ function togglePortfolio() {
     </div>
     <div class="field">
       <label for="f-interest">What you're after</label>
+      <div class="select-wrap">
       <select id="f-interest" name="interest">
-        <option value="Store Audit">Store Audit — from $300</option>
-        <option value="Audit + Accessibility">Audit + Accessibility — from $600</option>
+        <option value="Store Audit">Store Audit — from $450</option>
+        <option value="Audit + Accessibility">Audit + Accessibility — from $800</option>
         <option value="Implementation">Fixing something specific</option>
         <option value="Not sure">Not sure yet — tell me what you see</option>
       </select>
+      </div>
     </div>
     <div class="field">
       <label for="f-msg">Anything you've already noticed <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
